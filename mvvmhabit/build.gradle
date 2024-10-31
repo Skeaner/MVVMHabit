@@ -19,29 +19,27 @@ android {
 }
 
 dependencies {
+    testImplementation rootProject.ext.androidx.junit
+    androidTestImplementation rootProject.ext.androidx["androidtest-junit"]
+    androidTestImplementation rootProject.ext.androidx["androidtest-espresso"]
     api fileTree(include: ['*.jar'], dir: 'libs')
     //support
-    api rootProject.ext.support["support-v4"]
-    api rootProject.ext.support["appcompat-v7"]
-    api rootProject.ext.support["recyclerview-v7"]
+    api rootProject.ext.androidx.core
+    api rootProject.ext.androidx.appcompat
+    api rootProject.ext.androidx.swiperefreshlayout
+    api rootProject.ext.androidx.recyclerview
+    api rootProject.ext.androidx.multidex
     //rxjava
     api rootProject.ext.dependencies.rxjava
     api rootProject.ext.dependencies.rxandroid
     //rx管理View的生命周期
-    api(rootProject.ext.dependencies.rxlifecycle) {
-        exclude group: 'com.android.support'
-    }
-    api(rootProject.ext.dependencies["rxlifecycle-components"]) {
-        exclude group: 'com.android.support'
-    }
+    api rootProject.ext.dependencies.rxlifecycle
+    api rootProject.ext.dependencies["rxlifecycle-components"]
     //rxbinding
-    api(rootProject.ext.dependencies.rxbinding) {
-        exclude group: 'com.android.support'
-    }
+    api rootProject.ext.dependencies["rxbinding-core"]
+    api rootProject.ext.dependencies["rxbinding-appcompat"]
     //rx权限请求
-    api(rootProject.ext.dependencies.rxpermissions) {
-        exclude group: 'com.android.support'
-    }
+    api(rootProject.ext.dependencies.rxpermissions)
     //network
     api rootProject.ext.dependencies.okhttp
     api rootProject.ext.dependencies.retrofit
@@ -50,27 +48,15 @@ dependencies {
     //json解析
     api rootProject.ext.dependencies.gson
     //material-dialogs
-    api(rootProject.ext.dependencies["material-dialogs-core"]) {
-        exclude group: 'com.android.support'
-    }
-    api(rootProject.ext.dependencies["material-dialogs-commons"]) {
-        exclude group: 'com.android.support'
-    }
+    api(rootProject.ext.dependencies["material-dialogs-core"])
+    api(rootProject.ext.dependencies["material-dialogs-commons"])
     //glide图片加载库
-    api (rootProject.ext.dependencies.glide){
-        exclude group: 'com.android.support'
-    }
+    api(rootProject.ext.dependencies.glide)
     annotationProcessor rootProject.ext.dependencies["glide-compiler"]
     //recyclerview的databinding套装
-    api(rootProject.ext.dependencies.bindingcollectionadapter) {
-        exclude group: 'com.android.support'
-    }
-    api(rootProject.ext.dependencies["bindingcollectionadapter-recyclerview"]) {
-        exclude group: 'com.android.support'
-    }
-    api(rootProject.ext.dependencies["bindingcollectionadapter-viewpager2"]) {
-        exclude group: 'com.android.support'
-    }
+    api(rootProject.ext.dependencies.bindingcollectionadapter)
+    api(rootProject.ext.dependencies["bindingcollectionadapter-recyclerview"])
+    api(rootProject.ext.dependencies["bindingcollectionadapter-viewpager2"])
     //Google LiveData和ViewModel组件
     api rootProject.ext.dependencies["lifecycle-extensions"]
     annotationProcessor rootProject.ext.dependencies["lifecycle-compiler"]

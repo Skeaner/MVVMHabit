@@ -3,8 +3,7 @@ package me.goldze.mvvmhabit.base;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.afollestad.materialdialogs.MaterialDialog;
-import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
+import com.trello.rxlifecycle3.components.support.RxAppCompatActivity;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
@@ -20,7 +19,7 @@ import androidx.lifecycle.ViewModelProviders;
 import me.goldze.mvvmhabit.base.BaseViewModel.ParameterField;
 import me.goldze.mvvmhabit.bus.Messenger;
 import me.goldze.mvvmhabit.utils.MaterialDialogUtils;
-
+import me.skean.materialdialogs.MaterialDialog;
 
 /**
  * Created by goldze on 2017/6/15.

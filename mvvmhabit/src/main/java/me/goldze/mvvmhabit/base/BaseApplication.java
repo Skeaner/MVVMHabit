@@ -5,13 +5,14 @@ import android.app.Application;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.multidex.MultiDexApplication;
 import me.goldze.mvvmhabit.utils.Utils;
 
 /**
  * Created by goldze on 2017/6/15.
  */
 
-public class BaseApplication extends Application {
+public class BaseApplication extends MultiDexApplication {
     private static Application sInstance;
 
     @Override

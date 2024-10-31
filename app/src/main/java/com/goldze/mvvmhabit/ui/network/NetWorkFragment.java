@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
-import com.afollestad.materialdialogs.DialogAction;
-import com.afollestad.materialdialogs.MaterialDialog;
 import com.goldze.mvvmhabit.BR;
 import com.goldze.mvvmhabit.R;
 import com.goldze.mvvmhabit.app.AppViewModelFactory;
@@ -19,6 +17,8 @@ import androidx.lifecycle.ViewModelProviders;
 import me.goldze.mvvmhabit.base.BaseFragment;
 import me.goldze.mvvmhabit.utils.MaterialDialogUtils;
 import me.goldze.mvvmhabit.utils.ToastUtils;
+import me.skean.materialdialogs.DialogAction;
+import me.skean.materialdialogs.MaterialDialog;
 import me.tatarka.bindingcollectionadapter2.BindingRecyclerViewAdapter;
 
 /**
@@ -63,7 +63,7 @@ public class NetWorkFragment extends BaseFragment<FragmentNetworkBinding, NetWor
             @Override
             public void onChanged(@Nullable Object o) {
                 //结束刷新
-                binding.twinklingRefreshLayout.finishRefreshing();
+                binding.twinklingRefreshLayout.finishRefresh();
             }
         });
         //监听上拉加载完成
@@ -71,7 +71,7 @@ public class NetWorkFragment extends BaseFragment<FragmentNetworkBinding, NetWor
             @Override
             public void onChanged(@Nullable Object o) {
                 //结束刷新
-                binding.twinklingRefreshLayout.finishLoadmore();
+                binding.twinklingRefreshLayout.finishLoadMore();
             }
         });
         //监听删除条目

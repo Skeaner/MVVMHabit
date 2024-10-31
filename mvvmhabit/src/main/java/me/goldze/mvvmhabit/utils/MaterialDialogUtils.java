@@ -8,16 +8,15 @@ import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 
-import com.afollestad.materialdialogs.DialogAction;
-import com.afollestad.materialdialogs.GravityEnum;
-import com.afollestad.materialdialogs.MaterialDialog;
-import com.afollestad.materialdialogs.Theme;
 
 import java.util.List;
 
 import androidx.annotation.NonNull;
 import me.goldze.mvvmhabit.R;
-
+import me.skean.materialdialogs.DialogAction;
+import me.skean.materialdialogs.GravityEnum;
+import me.skean.materialdialogs.MaterialDialog;
+import me.skean.materialdialogs.Theme;
 
 /**
  * Created by goldze on 2017/5/10.
